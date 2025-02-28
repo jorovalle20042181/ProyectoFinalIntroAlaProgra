@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by anonymous (http://jsbin.com/yorenovavi/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+function obtenerSignoZodiacal(mes, dia) {
+    // Definimos los rangos de fechas para cada signo zodiacal
+    if ((mes === 3 && dia >= 21) || (mes === 4 && dia <= 19)) {
+        return "Aries";
+    } else if ((mes === 4 && dia >= 20) || (mes === 5 && dia <= 20)) {
+        return "Tauro";
+    } else if ((mes === 5 && dia >= 21) || (mes === 6 && dia <= 20)) {
+        return "Géminis";
+    } else if ((mes === 6 && dia >= 21) || (mes === 7 && dia <= 22)) {
+        return "Cáncer";
+    } else if ((mes === 7 && dia >= 23) || (mes === 8 && dia <= 22)) {
+        return "Leo";
+    } else if ((mes === 8 && dia >= 23) || (mes === 9 && dia <= 22)) {
+        return "Virgo";
+    } else if ((mes === 9 && dia >= 23) || (mes === 10 && dia <= 22)) {
+        return "Libra";
+    } else if ((mes === 10 && dia >= 23) || (mes === 11 && dia <= 21)) {
+        return "Escorpio";
+    } else if ((mes === 11 && dia >= 22) || (mes === 12 && dia <= 21)) {
+        return "Sagitario";
+    } else if ((mes === 12 && dia >= 22) || (mes === 1 && dia <= 19)) {
+        return "Capricornio";
+    } else if ((mes === 1 && dia >= 20) || (mes === 2 && dia <= 18)) {
+        return "Acuario";
+    } else if ((mes === 2 && dia >= 19) || (mes === 3 && dia <= 20)) {
+        return "Piscis";
+    }
+}
+
+// Solicitar al usuario su mes y día de nacimiento
+let mes = parseInt(prompt("Ingresa el mes de nacimiento (número):"));
+let dia = parseInt(prompt("Ingresa el día de nacimiento:"));
+if ((mes === 3 && dia >= 21) || (mes === 4 && dia <= 19)) {
+        return "Aries";
+    } else if ((mes === 4 && dia >= 20) || (mes === 5 && dia <= 20)) {
+        return "Tauro";
+    } else if ((mes === 5 && dia >= 21) || (mes === 6 && dia <= 20)) {
+        return "Géminis";
+    } else if ((mes === 6 && dia >= 21) || (mes === 7 && dia <= 22)) {
+        return "Cáncer";
+    } else if ((mes === 7 && dia >= 23) || (mes === 8 && dia <= 22)) {
+        return "Leo";
+    } else if ((mes === 8 && dia >= 23) || (mes === 9 && dia <= 22)) {
+        return "Virgo";
+    } else if ((mes === 9 && dia >= 23) || (mes === 10 && dia <= 22)) {
+        return "Libra";
+    } else if ((mes === 10 && dia >= 23) || (mes === 11 && dia <= 21)) {
+        return "Escorpio";
+    } else if ((mes === 11 && dia >= 22) || (mes === 12 && dia <= 21)) {
+        return "Sagitario";
+    } else if ((mes === 12 && dia >= 22) || (mes === 1 && dia <= 19)) {
+        return "Capricornio";
+    } else if ((mes === 1 && dia >= 20) || (mes === 2 && dia <= 18)) {
+        return "Acuario";
+    } else if ((mes === 2 && dia >= 19) || (mes === 3 && dia <= 20)) {
+        return "Piscis";
+    }
+
+// Mostrar el resultado
+alert("Tu signo zodiacal es: " + signo);
+<script id="jsbin-javascript">
+var pbase = 2000
+
+var edad_18 = 0.1
+var edad_25 = 0.2
+var edad_50 = 0.3
+
+var casado_18 = 0.1
+var casado_25 = 0.2
+var casado_50 = 0.3
+
+var hijos_car = 0.2
+
+var recargo = 0
+var recargo_total = 0
+
+var precio_final = 0
+
+var nombre = prompt("Ingrese su nombre por favor")
+var edad_asegurado = parseInt(prompt("Ingrese edad del asegurado:"))
+  if (edad_asegurado < 18) {
+    alert("go back to school")
+  } else if ((edad_asegurado >= 18) && (edad_asegurado <= 24)){
+    recargo = pbase * edad_18
+  } else if ((edad_asegurado >=25) && (edad_asegurado <= 49)){
+    recargo = pbase * edad_25
+  } else if (edad_asegurado >=50){
+    recargo = pbase * edad_50
+ }
+recargo_total += recargo
+recargo=recargo * 0
+
+var es_casado = prompt("¿El asegurado está casado? (Si/No):").toLowerCase()
+  if (es_casado == "si") {
+    var edad_con = parseInt(prompt("Ingrese edad del cónyuge:"))
+    if (edad_con >= 18 && edad_con <= 24) {
+      recargo = pbase * casado_18
+    } else if (edad_con >= 25 && edad_con <= 49){
+      recargo = pbase * casado_25
+    } else if (edad_con >= 50) {
+      recargo = pbase * casado_25
+    }
+}
+recargo_total += recargo
+recargo = recargo * 0
+
+var cantidad_hijos = parseInt(prompt("Ingrese la cantidad de hijos:"))
+recargo = pbase * hijos_car * cantidad_hijos
+// alert("recargo de los hijos es " + recargo)
+recargo_total += recargo
+recargo = recargo * 0
+
+precio_final = pbase + recargo_total
+
+alert("Para el posible asegurado " + nombre )
+alert("El total del recargo es " + recargo_total )
+alert("El precio de la cotización es: Q" + precio_final)
+
+
+</script>
+</body>
+</html>
